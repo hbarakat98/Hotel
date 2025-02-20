@@ -1,10 +1,10 @@
 @extends('admin.admin_dashboard')
-@section('admin') 
+@section('admin')
 
-<div class="page-content"> 
+<div class="page-content">
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-         
+
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
@@ -17,14 +17,14 @@
         <div class="ms-auto">
             <div class="btn-group">
                 <a href="{{ route('add.room.list') }}" class="btn btn-primary px-5">Add Booking </a>
-                
+
             </div>
         </div>
     </div>
     <!--end breadcrumb-->
 
 
-    
+
     <hr/>
     <div class="card">
         <div class="card-body">
@@ -43,21 +43,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                       @foreach ($room_number_list as $key=> $item ) 
+                       @foreach ($room_number_list as $key=> $item )
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td> {{ $item->name }}  </td>
                             <td>{{ $item->room_no }}</td>
                             <td>
                             @if ($item->booking_id != '')
-                                @if ($item->booking_stauts == 1)
+                                @if ($item->booking_status == 1)
                                 <span class="badge bg-danger">Booked</span>
-                                 @else   
+                                 @else
                                  <span class="badge bg-warning">Pending</span>
-                                @endif 
+                                @endif
                                 @else
                                 <span class="badge bg-success">Available</span>
-                            @endif    
+                            @endif
                             </td>
 
                             <td>
@@ -65,23 +65,23 @@
                              <span class="badge rounded-pill bg-secondary">
                                 {{ date('d-m-Y', strtotime($item->check_in)) }}
                              </span>
-                                 to 
+                                 to
                                  <span class="badge rounded-pill bg-info text-dark">
                                     {{ date('d-m-Y', strtotime($item->check_out)) }}
                                  </span>
-                             @endif   
+                             @endif
                             </td>
 
                             <td>
                         @if ($item->booking_id != '')
-                        {{ $item->booking_no }} 
-                        @endif 
+                        {{ $item->booking_no }}
+                        @endif
                             </td>
 
                              <td>
                                 @if ($item->booking_id != '')
-                                {{ $item->customer_name }} 
-                                @endif 
+                                {{ $item->customer_name }}
+                                @endif
                               </td>
 
                               <td>
@@ -90,20 +90,20 @@
                                   @else
                                   <span class="badge bg-danger">InActive</span>
                                 @endif
-                              </td> 
+                              </td>
 
                         </tr>
-                        @endforeach 
-                      
+                        @endforeach
+
                     </tbody>
-                 
+
                 </table>
             </div>
         </div>
     </div>
-     
+
     <hr/>
-     
+
 </div>
 
 

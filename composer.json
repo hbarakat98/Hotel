@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.8",
         "maatwebsite/excel": "^3.1",
         "spatie/laravel-permission": "^5.10",
-        "stripe/stripe-php": "^10.15"
+        "stripe/stripe-php": "^10.15",
+        "ext-http": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
