@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('user_id')->nullable();
             $table->string('check_in')->nullable();
             $table->string('check_out')->nullable();
-            $table->string('persion')->nullable();
+            $table->string('person')->nullable();
             $table->string('number_of_rooms')->nullable();
 
             $table->float('total_night')->default(0);
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->string('country')->nullable(); 
+            $table->string('country')->nullable();
             $table->string('state')->nullable();
             $table->string('zip_code')->nullable();
             $table->string('address')->nullable();

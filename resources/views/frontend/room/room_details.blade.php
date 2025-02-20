@@ -58,7 +58,7 @@
                                             <option>03</option>
                                             <option>04</option>
                                             <option>05</option>
-                                        </select>	
+                                        </select>
                                     </div>
                                 </div>
 
@@ -71,10 +71,10 @@
                                             <option>03</option>
                                             <option>04</option>
                                             <option>05</option>
-                                        </select>	
+                                        </select>
                                     </div>
                                 </div>
-    
+
                                 <div class="col-lg-12 col-md-12">
                                     <button type="submit" class="default-btn btn-bg-three border-radius-5">
                                         Book Now
@@ -84,20 +84,20 @@
                         </form>
                     </div>
 
-                  
+
                 </div>
             </div>
 
             <div class="col-lg-8">
                 <div class="room-details-article">
-                    
+
                     <div class="room-details-slider owl-carousel owl-theme">
-                        @foreach ($multiImage as $image) 
+                        @foreach ($multiImage as $image)
                         <div class="room-details-item">
                             <img src="{{ asset('upload/roomimg/multi_img/'.$image->multi_img) }}" alt="Images">
                         </div>
                         @endforeach
-                       
+
                     </div>
 
 
@@ -107,11 +107,11 @@
                     <div class="room-details-title">
                         <h2>{{ $roomdetails->type->name }}</h2>
                         <ul>
-                            
+
                             <li>
                                <b> Basic : ${{ $roomdetails->price }}/Night/Room</b>
-                            </li> 
-                         
+                            </li>
+
                         </ul>
                     </div>
 
@@ -126,12 +126,12 @@
 <div class="side-bar-plan">
                         <h3>Basic Plan Facilities</h3>
                         <ul>
-                            @foreach ($facility as $fac) 
+                            @foreach ($facilities as $fac)
                             <li><a href="#">{{ $fac->facility_name }}</a></li>
                             @endforeach
                         </ul>
 
-                        
+
                     </div>
 
 
@@ -140,7 +140,7 @@
 
 
 
-<div class="row"> 
+<div class="row">
 <div class="col-lg-6">
 
 
@@ -155,8 +155,8 @@
         <li>
              <a href="#"> <b>Size : </b> {{ $roomdetails->size }}ft2 <i class='bx bxs-cloud-download'></i></a>
         </li>
-       
-       
+
+
     </ul>
 </div>
 </div>
@@ -179,12 +179,12 @@
         <li>
              <a href="#"> <b>Bad Style : </b> {{ $roomdetails->bed_style }} <i class='bx bxs-cloud-download'></i></a>
         </li>
-         
+
     </ul>
 </div>
-</div> 
+</div>
 
-            </div> 
+            </div>
                 </div>
 
 
@@ -232,7 +232,7 @@
         </div>
 
         <div class="row ">
-           
+
            @foreach ($otherRooms as $item)
             <div class="col-lg-6">
                 <div class="room-card-two">
@@ -268,7 +268,7 @@
         <li><i class='bx bx-show-alt'></i>{{ $item->view }}</li>
         <li><i class='bx bxs-hotel'></i> {{ $item->bed_style }}</li>
                                 </ul>
-                                
+
                                 <a href="room-details.html" class="book-more-btn">
                                     Book Now
                                 </a>
@@ -277,9 +277,9 @@
                     </div>
                 </div>
             </div>
- 
+
             @endforeach
-           
+
 
 
         </div>
