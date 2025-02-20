@@ -1,10 +1,10 @@
 @extends('admin.admin_dashboard')
-@section('admin') 
+@section('admin')
 
-<div class="page-content"> 
+<div class="page-content">
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-         
+
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
@@ -15,17 +15,17 @@
             </nav>
         </div>
         <div class="ms-auto">
-            <div class="btn-group"> 
+            <div class="btn-group">
 
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Blog Category</button>
-                
+
             </div>
         </div>
     </div>
     <!--end breadcrumb-->
 
 
-    
+
     <hr/>
     <div class="card">
         <div class="card-body">
@@ -35,35 +35,35 @@
                         <tr>
                             <th>Sl</th>
                             <th>Category Name </th>
-                            <th>Category Slug</th> 
+                            <th>Category Slug</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                       @foreach ($category as $key=> $item ) 
+                       @foreach ($category as $key=> $item )
                         <tr>
-                            <td>{{ $key+1 }}</td> 
+                            <td>{{ $key+1 }}</td>
                             <td>{{ $item->category_name }}</td>
-                            <td>{{ $item->category_slug }}</td> 
+                            <td>{{ $item->category_slug }}</td>
                             <td>
-   
+
     <button type="button" class="btn btn-warning px-3 radius-30" data-bs-toggle="modal" data-bs-target="#category" id="{{ $item->id }}" onclick="categoryEdit(this.id)" >Edit</button>
 
     <a href="{{ route('delete.blog.category',$item->id) }}" class="btn btn-danger px-3 radius-30" id="delete"> Delete</a>
 
                             </td>
                         </tr>
-                        @endforeach 
-                      
+                        @endforeach
+
                     </tbody>
-                 
+
                 </table>
             </div>
         </div>
     </div>
-     
+
     <hr/>
-     
+
 </div>
 
 
@@ -75,8 +75,8 @@
                     <h5 class="modal-title" id="exampleModalLabel">Blog Category</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body"> 
-                
+                <div class="modal-body">
+
             <form action="{{ route('store.blog.category') }}" method="post">
                 @csrf
 
@@ -84,11 +84,11 @@
                     <label for="" class="form-label">Blog Category Name</label>
                     <input type="text" name="category_name" class="form-control">
                 </div>
-            
+
 
                 </div>
                 <div class="modal-footer">
-                   
+
         <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
@@ -106,8 +106,8 @@
                     <h5 class="modal-title" id="exampleModalLabel">Edit Blog Category</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body"> 
-                
+                <div class="modal-body">
+
             <form action="{{ route('update.blog.category') }}" method="post">
                 @csrf
 
@@ -117,11 +117,11 @@
                     <label for="" class="form-label">Blog Category Name</label>
        <input type="text" name="category_name" class="form-control" id="cat" >
                 </div>
-            
+
 
                 </div>
                 <div class="modal-footer">
-                   
+
         <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
@@ -138,7 +138,7 @@
                 dataType: 'json',
 
                 success:function(data){
-                    // console.log(data)
+                    console.log(data)
                     $('#cat').val(data.category_name);
                     $('#cat_id').val(data.id);
                 }

@@ -16,8 +16,8 @@
 
             <div class="col-lg-6 col-md-6">
                 <div class="testimonials-slider-area owl-carousel owl-theme">
-                    
-                    @foreach ($testimonial as $item) 
+
+                    @foreach ($testimonial as $item)
                     <div class="testimonials-slider-content">
                         <i class="flaticon-left-quote"></i>
                         <p>
@@ -32,7 +32,7 @@
                         </ul>
                     </div>
                     @endforeach
-                     
+
                 </div>
             </div>
         </div>

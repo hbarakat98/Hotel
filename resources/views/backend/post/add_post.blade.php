@@ -1,5 +1,5 @@
 @extends('admin.admin_dashboard')
-@section('admin') 
+@section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <div class="page-content">
@@ -15,19 +15,19 @@
 							</ol>
 						</nav>
 					</div>
-					 
+
 				</div>
 				<!--end breadcrumb-->
 				<div class="container">
 					<div class="main-body">
 						<div class="row">
-						 
+
     <div class="col-lg-12">
-        
+
         <div class="card">
 
             <div class="card-body p-4">
-                
+
                 <form  class="row g-3" action="{{ route('store.blog.post') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
@@ -35,16 +35,16 @@
                         <label for="input7" class="form-label">Blog Category</label>
                         <select name="blogcat_id" id="input7" class="form-select">
                             <option selected="">Select Category </option>
-                            @foreach ( $blogcat as $cat) 
+                            @foreach ( $blogcat as $cat)
                             <option value="{{ $cat->id }}" >{{ $cat->category_name }}</option>
                             @endforeach
-                           
+
                         </select>
                     </div>
-                    
+
                     <div class="col-md-6">
                         <label for="input1" class="form-label">Post Title</label>
-                        <input type="text" name="post_titile" class="form-control" id="input1"  >
+                        <input type="text" name="post_title" class="form-control" id="input1"  >
                     </div>
 
 
@@ -54,7 +54,7 @@
                     </div>
 
 
-                    
+
                     <div class="col-md-12">
                         <label for="input11" class="form-label">Post Description</label>
                         <textarea name="long_descp" class="form-control" id="myeditorinstance" ></textarea>
@@ -72,11 +72,11 @@
 
 
 
-                 
+
                     <div class="col-md-12">
                         <div class="d-md-flex d-grid align-items-center gap-3">
                             <button type="submit" class="btn btn-primary px-4">Submit</button>
-                            
+
                         </div>
                     </div>
                 </form>
@@ -91,7 +91,7 @@
 			</div>
 
 
-           
+
 
 
       <script type="text/javascript">
@@ -106,9 +106,9 @@
             });
         });
 
-        </script>   
-        
-        
+        </script>
+
+
 
 
 @endsection
