@@ -7,7 +7,7 @@
             <th>Action</th>
         </tr>
 
-        @foreach($room_numbers as $room_number) 
+        @foreach($room_numbers as $room_number)
           <tr>
             <td>{{ $room_number->room_no }}</td>
             <td>
